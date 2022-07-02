@@ -20,7 +20,7 @@ const baseConfig = {
         extensions: ['.ts', '.js'],
     },
     output: {
-        filename: 'index.js',
+        filename: 'bundle.js',
         path: path.resolve(__dirname, '../dist'),
     },
     plugins: [
