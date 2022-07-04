@@ -1,5 +1,6 @@
 // GET https://newsapi.org/v2/top-headlines/sources?apiKey=API_KEY
-export interface ISource {
+export type Callback<T> = (data: T) => void;
+export interface ISources {
     id: string;
     name: string;
 }
@@ -8,7 +9,7 @@ export interface IPoster {
     content: string;
     description: string;
     publishedAt: string;
-    source: ISource;
+    source: ISources;
     title: string;
     url: string;
     urlToImage: string;
@@ -16,16 +17,16 @@ export interface IPoster {
 export interface INews {
     status: string;
     totalResults?: number;
-    sources?: IPortal[];
+    sources?: IPortal<string>[];
     articles?: IPoster[];
 }
 
-export interface IPortal {
-    id: string;
-    category: string;
-    country: string;
-    description: string;
-    language: string;
-    name: string;
-    url: string;
+export interface IPortal<T> {
+    id: T;
+    category: T;
+    country: T;
+    description: T;
+    language: T;
+    name: T;
+    url: T;
 }
