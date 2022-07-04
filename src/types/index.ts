@@ -1,4 +1,3 @@
-// GET https://newsapi.org/v2/top-headlines/sources?apiKey=API_KEY
 export type Callback<T> = (data: T) => void;
 export interface ISources {
     id: string;
