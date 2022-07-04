@@ -4,7 +4,7 @@ export interface ISource {
     name: string;
 }
 export interface IPoster {
-    author: string;
+    author: string | null;
     content: string;
     description: string;
     publishedAt: string;
@@ -14,7 +14,18 @@ export interface IPoster {
     urlToImage: string;
 }
 export interface INews {
-    status: boolean;
-    totalResults: number;
-    sources: [];
+    status: string;
+    totalResults?: number;
+    sources?: IPortal[];
+    articles?: IPoster[];
+}
+
+export interface IPortal {
+    id: string;
+    category: string;
+    country: string;
+    description: string;
+    language: string;
+    name: string;
+    url: string;
 }
