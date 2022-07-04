@@ -18,6 +18,7 @@ class Loader {
     }
 
     errorHandler(res: Response) {
+        console.log('🚀 ~ file: loader.ts ~ line 21 ~ Loader ~ errorHandler ~ res', res);
         if (!res.ok) {
             if (res.status === 401 || res.status === 404)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
@@ -29,9 +30,10 @@ class Loader {
 
     makeUrl(options: object, endpoint: string): string {
         const urlOptions: object = { ...this.options, ...options };
-        const url = `${this.baseLink}${endpoint}?`;
+        let url = `${this.baseLink}${endpoint}?`;
         Object.keys(urlOptions).forEach((key: string): void => {
-            `${key}=${urlOptions[key as keyof typeof urlOptions]}&`;
+            console.log('🚀 ~ file: loader.ts ~ line 35 ~ Loader ~ Object.keys ~ urlOptions', urlOptions);
+            url += `${key}=${urlOptions[key as keyof typeof urlOptions]}&`;
         });
 
         return url.slice(0, -1);
