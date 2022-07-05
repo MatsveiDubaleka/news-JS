@@ -1,4 +1,5 @@
 body {
+    position: relative;
     color: #fff;
     background: #17181c;
     font-family: sans-serif;
@@ -14,22 +15,48 @@ header h1 {
 }
 
 footer {
+    width: 100%;
+    position: fixed;
     height: 100px;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    bottom: 0;
+    background-color: #30c5ff;
+    z-index: 2;
 }
 footer .copyright {
     font-size: 14px;
     color: #333;
     text-align: center;
 }
-footer .copyright a {
-    color: #444;
-}
 footer .copyright a:hover {
-    color: #555;
+    color: #30c5ff;
+    transition: 0.5s;
 }
 footer .copyright:before {
     content: '©';
+}
+
+.copyright a {
+    font-size: 16px;
+    text-align: center;
+    color: #444;
+}
+
+.copyright,
+.rsschool {
+    padding: 0 20px;
+}
+
+.rsschool-image {
+    width: 100px;
+    height: 100px;
+}
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.25rem;
+        margin: 0;
+    }
 }
