@@ -121,7 +121,11 @@
     left: 0%;
 }
 
-@media (min-width: 640px) {
+@media (max-width: 768px) {
+    .news {
+        padding: 0 2vw;
+    }
+
     .news__item {
         flex-direction: row;
         max-width: 700px;
@@ -162,5 +166,17 @@
 
     .news__item.alt .news__meta-details {
         padding-left: 25px;
+    }
+
+    .news__item .news__description h2 {
+        font-size: 1.2rem;
+    }
+
+    .news__item .news__description h3 {
+        font-size: 0.8rem;
+    }
+
+    .news__item p:first-of-type {
+        font-size: 0.9rem;
     }
 }

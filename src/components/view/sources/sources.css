@@ -32,3 +32,15 @@
     font-weight: 400;
     white-space: nowrap;
 }
+
+@media (max-width: 768px) {
+    .sources {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .source__item {
+        margin: 0;
+    }
+}
