@@ -2,6 +2,7 @@ export type Callback<T> = (data: T) => void;
 export interface ISources {
     id: string;
     name: string;
+    status: string;
 }
 export interface IPoster {
     author: string | null;
@@ -16,16 +17,21 @@ export interface IPoster {
 export interface INews {
     status: string;
     totalResults?: number;
-    sources?: IPortal<string>[];
+    sources?: [];
     articles?: IPoster[];
 }
 
-export interface IPortal<T> {
-    id: T;
-    category: T;
-    country: T;
-    description: T;
-    language: T;
-    name: T;
-    url: T;
+export interface IPortal {
+    id: string;
+    category: string;
+    country: string;
+    description: string;
+    language: string;
+    name: string;
+    url: string;
+}
+
+export interface IView {
+    news: object;
+    sources: object;
 }
