@@ -35,3 +35,8 @@ export interface IView {
     news: object;
     sources: object;
 }
+
+export enum Endpoint {
+    everything = 'everything',
+    sources = 'sources',
+}
